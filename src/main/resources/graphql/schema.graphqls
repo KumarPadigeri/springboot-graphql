@@ -1,0 +1,36 @@
+type BookAO{
+    id:ID,
+    title:String,
+    authorName:String,
+    authorBio:String,
+    publishedDate:String,
+    isbn:String,
+    genre:String,
+    language:String,
+    pageCount:Int,
+    publisher:String,
+    price:Int
+}
+input BookInput {
+    title: String!
+    authorName: String!
+    authorBio: String
+    publishedDate: String
+    isbn: String
+    genre: String
+    language: String
+    pageCount: Int
+    publisher: String
+    price: Int
+}
+
+type Query{
+    fetchAllBooks:[BookAO]
+    findByBookId(id:ID): BookAO
+}
+
+type Mutation{
+    updateBookPrice(id:ID,updatedPrice:Int):BookAO
+    deleteBook(id:ID):BookAO
+    insertBook(book: BookInput!): BookAO
+}

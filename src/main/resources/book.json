@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "version": "1.0.0",
+    "title": "Book API Details",
+    "license": {
+      "name": "###"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8081",
+      "description": "Development server"
+    },
+    {
+      "url": "http://localhost:8081",
+      "description": "Staging server"
+    },
+    {
+      "url": "http://localhost:8081",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+  },
+  "components": {
+    "schemas": {
+      "Book": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string"
+          },
+          "authorName": {
+            "type": "string"
+          },
+          "authorBio": {
+            "type": "string"
+          },
+          "publishedDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "isbn": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ]
+}
